@@ -22,4 +22,11 @@ public class MyResource {
     public String getIt() {
         return "Hello, Heroku!";
     }
+    
+    @GET
+    @Path("/afficher/{name}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String affiche(@PathParam("name") String name) {
+        return "Cette fonction affiche : "+name;
+    }
 }
